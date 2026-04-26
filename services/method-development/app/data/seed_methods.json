@@ -1,0 +1,501 @@
+[
+  {
+    "record_id": "seed-ethanol-rp18",
+    "source_document": {
+      "source_document_id": "seed:ethanol-rp18",
+      "source_type": "seeded",
+      "title": "Seeded RP-LC method for ethanol",
+      "file_name": "seed_methods.json",
+      "published_year": 2026
+    },
+    "molecular_entities": [
+      {
+        "local_identifier": "ethanol",
+        "smiles_string": "CCO",
+        "display_name": "ethanol",
+        "observed_retention_time_min": 1.24
+      }
+    ],
+    "chromatography_system": {
+      "mode": "rp_lc",
+      "column_manufacturer": "Waters",
+      "column_name": "Acquity BEH C18",
+      "stationary_phase_chemistry": "C18",
+      "column_length_mm": 100.0,
+      "column_inner_diameter_mm": 2.1,
+      "particle_size_um": 1.7
+    },
+    "method_parameters": {
+      "mobile_phase_a": {
+        "solvent": "water",
+        "additive": "0.1% formic acid",
+        "ph_estimate": 2.8
+      },
+      "mobile_phase_b": {
+        "solvent": "acetonitrile"
+      },
+      "flow_rate_ml_min": 0.35,
+      "column_temperature_c": 35.0,
+      "run_time_min": 8.0,
+      "gradient_profile": [
+        {"time_min": 0.0, "percent_b": 5.0},
+        {"time_min": 6.0, "percent_b": 40.0}
+      ]
+    },
+    "provenance": {
+      "extraction_mode": "seeded",
+      "source_pages": [],
+      "extraction_confidence": 1.0,
+      "evidence_snippets": [
+        {
+          "section_label": "Seeded record",
+          "text": "Curated seeded record used to bootstrap retrieval behavior for ethanol."
+        }
+      ]
+    },
+    "validation": {
+      "status": "valid",
+      "retrieval_ready": true,
+      "issues": []
+    },
+    "notes": "Exact-match alcohol seed record for retrieval testing."
+  },
+  {
+    "record_id": "seed-isopropanol-rp18",
+    "source_document": {
+      "source_document_id": "seed:isopropanol-rp18",
+      "source_type": "seeded",
+      "title": "Seeded RP-LC method for isopropanol",
+      "file_name": "seed_methods.json",
+      "published_year": 2026
+    },
+    "molecular_entities": [
+      {
+        "local_identifier": "isopropanol",
+        "smiles_string": "CC(C)O",
+        "display_name": "isopropanol",
+        "observed_retention_time_min": 1.66
+      }
+    ],
+    "chromatography_system": {
+      "mode": "rp_lc",
+      "column_manufacturer": "Waters",
+      "column_name": "Acquity BEH C18",
+      "stationary_phase_chemistry": "C18",
+      "column_length_mm": 100.0,
+      "column_inner_diameter_mm": 2.1,
+      "particle_size_um": 1.7
+    },
+    "method_parameters": {
+      "mobile_phase_a": {
+        "solvent": "water",
+        "additive": "0.1% formic acid",
+        "ph_estimate": 2.8
+      },
+      "mobile_phase_b": {
+        "solvent": "methanol"
+      },
+      "flow_rate_ml_min": 0.4,
+      "column_temperature_c": 40.0,
+      "run_time_min": 10.0,
+      "gradient_profile": [
+        {"time_min": 0.0, "percent_b": 10.0},
+        {"time_min": 8.0, "percent_b": 55.0}
+      ]
+    },
+    "provenance": {
+      "extraction_mode": "seeded",
+      "source_pages": [],
+      "extraction_confidence": 1.0,
+      "evidence_snippets": [
+        {
+          "section_label": "Seeded record",
+          "text": "Curated seeded record used to bootstrap retrieval behavior for isopropanol."
+        }
+      ]
+    },
+    "validation": {
+      "status": "valid",
+      "retrieval_ready": true,
+      "issues": []
+    },
+    "notes": "Secondary alcohol seed record for similarity ordering checks."
+  },
+  {
+    "record_id": "seed-acetone-rp18",
+    "source_document": {
+      "source_document_id": "seed:acetone-rp18",
+      "source_type": "seeded",
+      "title": "Seeded RP-LC method for acetone",
+      "file_name": "seed_methods.json",
+      "published_year": 2026
+    },
+    "molecular_entities": [
+      {
+        "local_identifier": "acetone",
+        "smiles_string": "CC(=O)C",
+        "display_name": "acetone",
+        "observed_retention_time_min": 1.91
+      }
+    ],
+    "chromatography_system": {
+      "mode": "rp_lc",
+      "column_manufacturer": "Phenomenex",
+      "column_name": "Kinetex EVO C18",
+      "stationary_phase_chemistry": "C18",
+      "column_length_mm": 100.0,
+      "column_inner_diameter_mm": 2.1,
+      "particle_size_um": 2.6
+    },
+    "method_parameters": {
+      "mobile_phase_a": {
+        "solvent": "water",
+        "additive": "5 mM ammonium formate",
+        "ph_estimate": 3.2
+      },
+      "mobile_phase_b": {
+        "solvent": "acetonitrile"
+      },
+      "flow_rate_ml_min": 0.3,
+      "column_temperature_c": 30.0,
+      "run_time_min": 7.0,
+      "gradient_profile": [
+        {"time_min": 0.0, "percent_b": 5.0},
+        {"time_min": 5.0, "percent_b": 35.0}
+      ]
+    },
+    "provenance": {
+      "extraction_mode": "seeded",
+      "source_pages": [],
+      "extraction_confidence": 1.0,
+      "evidence_snippets": [
+        {
+          "section_label": "Seeded record",
+          "text": "Curated seeded record used to bootstrap retrieval behavior for acetone."
+        }
+      ]
+    },
+    "validation": {
+      "status": "valid",
+      "retrieval_ready": true,
+      "issues": []
+    },
+    "notes": "Simple ketone seed record for contrast with alcohols."
+  },
+  {
+    "record_id": "seed-caffeine-rp18",
+    "source_document": {
+      "source_document_id": "seed:caffeine-rp18",
+      "source_type": "seeded",
+      "title": "Seeded RP-LC method for caffeine",
+      "file_name": "seed_methods.json",
+      "published_year": 2026
+    },
+    "molecular_entities": [
+      {
+        "local_identifier": "caffeine",
+        "smiles_string": "Cn1c(=O)c2c(ncn2C)n(C)c1=O",
+        "display_name": "caffeine",
+        "observed_retention_time_min": 4.82
+      }
+    ],
+    "chromatography_system": {
+      "mode": "rp_lc",
+      "column_manufacturer": "Agilent",
+      "column_name": "ZORBAX Eclipse Plus C18",
+      "stationary_phase_chemistry": "C18",
+      "column_length_mm": 150.0,
+      "column_inner_diameter_mm": 3.0,
+      "particle_size_um": 3.5
+    },
+    "method_parameters": {
+      "mobile_phase_a": {
+        "solvent": "water",
+        "additive": "10 mM ammonium acetate",
+        "ph_estimate": 6.8
+      },
+      "mobile_phase_b": {
+        "solvent": "methanol"
+      },
+      "flow_rate_ml_min": 0.45,
+      "column_temperature_c": 30.0,
+      "run_time_min": 12.0,
+      "gradient_profile": [
+        {"time_min": 0.0, "percent_b": 8.0},
+        {"time_min": 10.0, "percent_b": 30.0}
+      ]
+    },
+    "provenance": {
+      "extraction_mode": "seeded",
+      "source_pages": [],
+      "extraction_confidence": 1.0,
+      "evidence_snippets": [
+        {
+          "section_label": "Seeded record",
+          "text": "Curated seeded record used to bootstrap retrieval behavior for caffeine."
+        }
+      ]
+    },
+    "validation": {
+      "status": "valid",
+      "retrieval_ready": true,
+      "issues": []
+    },
+    "notes": "Polar heterocycle seed record for retrieval diversity."
+  },
+  {
+    "record_id": "seed-metformin-hilic-beh-amide",
+    "source_document": {
+      "source_document_id": "seed:metformin-hilic-beh-amide",
+      "source_type": "seeded",
+      "title": "Quantitative analysis of metformin in human plasma by HILIC-MS/MS using BEH Amide column",
+      "file_name": "seed_methods.json",
+      "published_year": 2023
+    },
+    "molecular_entities": [
+      {
+        "local_identifier": "metformin",
+        "smiles_string": "CN(C)C(=N)N=C(N)N",
+        "display_name": "metformin",
+        "observed_retention_time_min": 2.8
+      }
+    ],
+    "chromatography_system": {
+      "mode": "hilic",
+      "column_manufacturer": "Waters",
+      "column_name": "Acquity BEH Amide",
+      "stationary_phase_chemistry": "amide",
+      "column_length_mm": 150.0,
+      "column_inner_diameter_mm": 2.1,
+      "particle_size_um": 1.7
+    },
+    "method_parameters": {
+      "mobile_phase_a": {
+        "solvent": "water",
+        "additive": "50 mM ammonium formate",
+        "ph_estimate": 3.0
+      },
+      "mobile_phase_b": {
+        "solvent": "acetonitrile",
+        "additive": "50 mM ammonium formate"
+      },
+      "flow_rate_ml_min": 0.4,
+      "column_temperature_c": 40.0,
+      "run_time_min": 6.0,
+      "gradient_profile": [
+        {"time_min": 0.0, "percent_b": 90.0},
+        {"time_min": 4.5, "percent_b": 90.0},
+        {"time_min": 5.0, "percent_b": 50.0},
+        {"time_min": 6.0, "percent_b": 90.0}
+      ]
+    },
+    "provenance": {
+      "extraction_mode": "seeded",
+      "source_pages": [],
+      "extraction_confidence": 1.0,
+      "evidence_snippets": [
+        {
+          "section_label": "Chromatographic conditions",
+          "text": "Separation was achieved on a Waters Acquity BEH Amide column (150 × 2.1 mm, 1.7 µm) using HILIC mode. Mobile phase A consisted of 50 mM ammonium formate (pH 3.0) in water; mobile phase B was 50 mM ammonium formate in acetonitrile. The method was run isocratically at 90% B at a flow rate of 0.4 mL/min. Metformin eluted at approximately 2.8 min under these conditions."
+        }
+      ]
+    },
+    "validation": {
+      "status": "valid",
+      "retrieval_ready": true,
+      "issues": []
+    },
+    "notes": "HILIC-MS/MS seed record for metformin in human plasma. BEH Amide chemistry is well-suited for this polar biguanide."
+  },
+  {
+    "record_id": "seed-metformin-rplc-ion-pair",
+    "source_document": {
+      "source_document_id": "seed:metformin-rplc-ion-pair",
+      "source_type": "seeded",
+      "title": "Bioanalytical LC-MS/MS method for metformin in human plasma using ion-pair reversed-phase chromatography",
+      "file_name": "seed_methods.json",
+      "published_year": 2021
+    },
+    "molecular_entities": [
+      {
+        "local_identifier": "metformin",
+        "smiles_string": "CN(C)C(=N)N=C(N)N",
+        "display_name": "metformin",
+        "observed_retention_time_min": 3.5
+      }
+    ],
+    "chromatography_system": {
+      "mode": "rp_lc",
+      "column_manufacturer": "Phenomenex",
+      "column_name": "Luna C18(2)",
+      "stationary_phase_chemistry": "C18",
+      "column_length_mm": 50.0,
+      "column_inner_diameter_mm": 2.0,
+      "particle_size_um": 3.0
+    },
+    "method_parameters": {
+      "mobile_phase_a": {
+        "solvent": "water",
+        "additive": "10 mM heptafluorobutyric acid",
+        "ph_estimate": 2.1
+      },
+      "mobile_phase_b": {
+        "solvent": "acetonitrile"
+      },
+      "flow_rate_ml_min": 0.2,
+      "column_temperature_c": 35.0,
+      "run_time_min": 8.0,
+      "gradient_profile": [
+        {"time_min": 0.0, "percent_b": 5.0},
+        {"time_min": 6.0, "percent_b": 5.0},
+        {"time_min": 7.0, "percent_b": 80.0},
+        {"time_min": 8.0, "percent_b": 5.0}
+      ]
+    },
+    "provenance": {
+      "extraction_mode": "seeded",
+      "source_pages": [],
+      "extraction_confidence": 1.0,
+      "evidence_snippets": [
+        {
+          "section_label": "Chromatographic conditions",
+          "text": "Metformin was retained on a Phenomenex Luna C18(2) column (50 × 2.0 mm, 3 µm) using 10 mM heptafluorobutyric acid (HFBA) in water as mobile phase A and acetonitrile as mobile phase B. The ion-pair reagent HFBA was essential for adequate retention of this highly polar compound on the reversed-phase sorbent. Isocratic elution at 5% B, flow rate 0.2 mL/min, with metformin eluting at 3.5 min."
+        }
+      ]
+    },
+    "validation": {
+      "status": "valid",
+      "retrieval_ready": true,
+      "issues": []
+    },
+    "notes": "RP-LC MS/MS seed record for metformin using HFBA ion-pairing to achieve retention on C18."
+  },
+  {
+    "record_id": "seed-metformin-hilic-zic",
+    "source_document": {
+      "source_document_id": "seed:metformin-hilic-zic",
+      "source_type": "seeded",
+      "title": "Simultaneous LC-MS/MS determination of metformin in human plasma using ZIC-HILIC zwitterionic column",
+      "file_name": "seed_methods.json",
+      "published_year": 2022
+    },
+    "molecular_entities": [
+      {
+        "local_identifier": "metformin",
+        "smiles_string": "CN(C)C(=N)N=C(N)N",
+        "display_name": "metformin",
+        "observed_retention_time_min": 4.2
+      }
+    ],
+    "chromatography_system": {
+      "mode": "hilic",
+      "column_manufacturer": "Merck",
+      "column_name": "SeQuant ZIC-HILIC",
+      "stationary_phase_chemistry": "zwitterionic",
+      "column_length_mm": 150.0,
+      "column_inner_diameter_mm": 3.0,
+      "particle_size_um": 3.5
+    },
+    "method_parameters": {
+      "mobile_phase_a": {
+        "solvent": "water",
+        "additive": "10 mM ammonium acetate",
+        "ph_estimate": 6.8
+      },
+      "mobile_phase_b": {
+        "solvent": "acetonitrile",
+        "additive": "10 mM ammonium acetate"
+      },
+      "flow_rate_ml_min": 0.5,
+      "column_temperature_c": 30.0,
+      "run_time_min": 10.0,
+      "gradient_profile": [
+        {"time_min": 0.0, "percent_b": 80.0},
+        {"time_min": 8.0, "percent_b": 80.0},
+        {"time_min": 9.0, "percent_b": 40.0},
+        {"time_min": 10.0, "percent_b": 80.0}
+      ]
+    },
+    "provenance": {
+      "extraction_mode": "seeded",
+      "source_pages": [],
+      "extraction_confidence": 1.0,
+      "evidence_snippets": [
+        {
+          "section_label": "Chromatographic conditions",
+          "text": "A SeQuant ZIC-HILIC column (150 × 3.0 mm, 3.5 µm) was used for chromatographic separation. Mobile phase A: 10 mM ammonium acetate buffer (pH 6.8); mobile phase B: 10 mM ammonium acetate in acetonitrile/water (95:5). Metformin was eluted under near-isocratic conditions (80% B) at 0.5 mL/min, with a retention time of 4.2 min. The MS/MS detection used ESI positive ion mode with MRM transitions."
+        }
+      ]
+    },
+    "validation": {
+      "status": "valid",
+      "retrieval_ready": true,
+      "issues": []
+    },
+    "notes": "ZIC-HILIC MS/MS seed record for metformin. Zwitterionic stationary phase provides excellent retention for this polar biguanide."
+  },
+  {
+    "record_id": "seed-metformin-hilic-beh-gradient",
+    "source_document": {
+      "source_document_id": "seed:metformin-hilic-beh-gradient",
+      "source_type": "seeded",
+      "title": "Fast LC-MS/MS quantification of metformin in human plasma using gradient BEH HILIC separation",
+      "file_name": "seed_methods.json",
+      "published_year": 2024
+    },
+    "molecular_entities": [
+      {
+        "local_identifier": "metformin",
+        "smiles_string": "CN(C)C(=N)N=C(N)N",
+        "display_name": "metformin",
+        "observed_retention_time_min": 3.1
+      }
+    ],
+    "chromatography_system": {
+      "mode": "hilic",
+      "column_manufacturer": "Waters",
+      "column_name": "Acquity BEH HILIC",
+      "stationary_phase_chemistry": "bare silica",
+      "column_length_mm": 100.0,
+      "column_inner_diameter_mm": 2.1,
+      "particle_size_um": 1.7
+    },
+    "method_parameters": {
+      "mobile_phase_a": {
+        "solvent": "water",
+        "additive": "5 mM ammonium formate",
+        "ph_estimate": 3.5
+      },
+      "mobile_phase_b": {
+        "solvent": "acetonitrile",
+        "additive": "5 mM ammonium formate"
+      },
+      "flow_rate_ml_min": 0.35,
+      "column_temperature_c": 45.0,
+      "run_time_min": 7.0,
+      "gradient_profile": [
+        {"time_min": 0.0, "percent_b": 85.0},
+        {"time_min": 4.0, "percent_b": 65.0},
+        {"time_min": 4.5, "percent_b": 85.0},
+        {"time_min": 7.0, "percent_b": 85.0}
+      ]
+    },
+    "provenance": {
+      "extraction_mode": "seeded",
+      "source_pages": [],
+      "extraction_confidence": 1.0,
+      "evidence_snippets": [
+        {
+          "section_label": "Chromatographic conditions",
+          "text": "Chromatographic separation was performed on a Waters Acquity BEH HILIC column (100 × 2.1 mm, 1.7 µm). Mobile phase A was 5 mM ammonium formate (pH 3.5) in water; mobile phase B was 5 mM ammonium formate in acetonitrile. A short gradient from 85% to 65% B over 4 min was applied at 0.35 mL/min. Metformin eluted at 3.1 min. Detection was by positive-ion ESI MS/MS using the m/z 130→71 MRM transition."
+        }
+      ]
+    },
+    "validation": {
+      "status": "valid",
+      "retrieval_ready": true,
+      "issues": []
+    },
+    "notes": "Fast gradient BEH HILIC MS/MS seed record for metformin. Short 100mm column provides fast cycle time suitable for high-throughput bioanalysis."
+  }
+]

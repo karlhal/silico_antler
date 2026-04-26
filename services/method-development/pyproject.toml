@@ -1,0 +1,37 @@
+[project]
+name = "silico-method-development"
+version = "0.1.0"
+description = "Backend service for HPLC method-development retrieval and extraction"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi==0.115.0",
+  "uvicorn[standard]==0.30.6",
+  "pydantic==2.9.2",
+  "httpx==0.27.2",
+  "rich==13.9.4",
+  "pdfplumber==0.11.4",
+  "beautifulsoup4==4.12.3",
+  "lxml==5.3.0",
+  "rdkit>=2024.3,<2026",
+  "pymilvus==2.5.5",
+  "setuptools>=69.5.1,<70",
+  "questionary==2.0.1",
+  "python-dotenv==1.0.1",
+  "slowapi==0.1.9",
+  "pymupdf4llm==0.0.17",
+]
+
+[dependency-groups]
+dev = [
+  "pytest==8.3.3",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.fastapi]
+entrypoint = "app.main:app"
+
+[tool.uv]
+package = false

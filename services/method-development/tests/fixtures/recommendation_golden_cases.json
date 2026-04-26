@@ -1,0 +1,204 @@
+{
+  "recommendation_cases": [
+    {
+      "case_id": "local_files_carotenoids_plasma_msms",
+      "source_mode": "local_files",
+      "paper_fixture": "carotenoids_plasma_html",
+      "request": {
+        "request_text": "Extract the final LC-MS/MS method for carotenoids in plasma",
+        "analyte_name": "carotenoids",
+        "matrix_hint": "human plasma",
+        "require_mass_spectrometry": true,
+        "max_papers": 2,
+        "system_specs": {
+          "column_manufacturer": "Waters",
+          "column_name": "XBridge BEH C18",
+          "column_chemistry": "C18",
+          "column_length_mm": 100.0,
+          "column_inner_diameter_mm": 2.1,
+          "particle_size_um": 3.5,
+          "available_solvents": [
+            "Water",
+            "Methanol"
+          ],
+          "detector_types": [
+            "MS/MS"
+          ]
+        }
+      },
+      "expected": {
+        "discovered_paper_count": 0,
+        "recommended_paper_id": "Development-of-an-Advanced-HPLC-MS_MS-Method-for-the-Determination-of-Carotenoids-and-Fat-Soluble-Vitamins-in-Human-Plasma",
+        "total_score": 0.683,
+        "system_match": 0.125,
+        "analyte_match": 0.8,
+        "matrix_fit": 1.0,
+        "practical_fit": 0.933,
+        "extraction_confidence": 0.902,
+        "literature_relevance": 1.0,
+        "scaled_flow_rate_ml_min": 0.13,
+        "scaled_injection_volume_ul": 0.8,
+        "scaled_run_time_min": 20.0,
+        "scaled_gradient_points": 8,
+        "min_evidence_count": 20,
+        "required_rationale_fragments": [
+          "System:",
+          "Analyte:",
+          "Runtime:"
+        ],
+        "required_scaling_note_fragments": [
+          "Flow rate adjusted from 0.6 to 0.13",
+          "Gradient times adjusted by factor of 0.40"
+        ]
+      }
+    },
+    {
+      "case_id": "open_access_carotenoids_plasma_msms",
+      "source_mode": "open_access",
+      "paper_fixture": "carotenoids_plasma_html",
+      "request": {
+        "request_text": "Find a final LC-MS/MS method for carotenoids in plasma",
+        "analyte_name": "carotenoids",
+        "matrix_hint": "human plasma",
+        "require_mass_spectrometry": true,
+        "max_papers": 2,
+        "system_specs": {
+          "column_manufacturer": "Waters",
+          "column_name": "XBridge BEH C18",
+          "column_chemistry": "C18",
+          "column_length_mm": 100.0,
+          "column_inner_diameter_mm": 2.1,
+          "particle_size_um": 3.5,
+          "available_solvents": [
+            "Water",
+            "Methanol"
+          ],
+          "detector_types": [
+            "MS/MS"
+          ]
+        }
+      },
+      "expected": {
+        "discovered_paper_count": 1,
+        "recommended_paper_id": "paper-mdpi",
+        "total_score": 0.686,
+        "system_match": 0.125,
+        "analyte_match": 0.8,
+        "matrix_fit": 1.0,
+        "practical_fit": 0.933,
+        "extraction_confidence": 0.902,
+        "literature_relevance": 1.0,
+        "scaled_flow_rate_ml_min": 0.13,
+        "scaled_injection_volume_ul": 0.8,
+        "scaled_run_time_min": 20.0,
+        "scaled_gradient_points": 8,
+        "min_evidence_count": 20,
+        "required_rationale_fragments": [
+          "System:",
+          "Analyte:",
+          "Runtime:"
+        ],
+        "required_scaling_note_fragments": [
+          "Flow rate adjusted from 0.6 to 0.13",
+          "Gradient times adjusted by factor of 0.40"
+        ]
+      }
+    },
+    {
+      "case_id": "local_files_plos_glucose_pmp_rplc",
+      "source_mode": "local_files",
+      "paper_fixture": "plos_glucose_pdf",
+      "request": {
+        "request_text": "Extract the final RP-HPLC method for glucose in Shewanella oneidensis cultures utilizing PMP derivatization",
+        "analyte_name": "glucose",
+        "preferred_mode": "rp_lc",
+        "require_mass_spectrometry": false,
+        "max_papers": 1,
+        "system_specs": {
+          "column_manufacturer": null,
+          "column_name": null,
+          "column_chemistry": null,
+          "column_length_mm": null,
+          "column_inner_diameter_mm": null,
+          "particle_size_um": null,
+          "available_solvents": [],
+          "detector_types": []
+        }
+      },
+      "expected": {
+        "discovered_paper_count": 0,
+        "recommended_paper_id": "paper_test2",
+        "total_score": 0.73,
+        "system_match": 0.5,
+        "analyte_match": 0.8,
+        "matrix_fit": 1.0,
+        "practical_fit": 0.888,
+        "extraction_confidence": 0.996,
+        "literature_relevance": 0.275,
+        "min_evidence_count": 8,
+        "required_rationale_fragments": [
+          "System:",
+          "Analyte:",
+          "Runtime:"
+        ]
+      }
+    }
+  ],
+  "local_corpus_cases": [
+    {
+      "case_id": "local_corpus_exact_caffeine",
+      "query": {
+        "target_smiles": "CN1C=NC2=C1C(=O)N(C(=O)N2C)C",
+        "limit": 1
+      },
+      "expected": {
+        "top_record_id": "seed-caffeine-rp18",
+        "top_matched_entity": "caffeine",
+        "top_score": 1.0,
+        "match_type": "exact",
+        "review_state": "seeded",
+        "required_summary_fragment": "Exact molecular match",
+        "required_snippet_fragment": "Curated seeded record used to bootstrap retrieval behavior for caffeine"
+      }
+    },
+    {
+      "case_id": "local_corpus_target_plus_impurity_prefers_multi_analyte",
+      "query": {
+        "target_smiles": "CCO",
+        "impurity_smiles": [
+          "CC(=O)C"
+        ],
+        "limit": 2
+      },
+      "expected": {
+        "top_record_id": "record-multi-analyte",
+        "top_score": 1.0,
+        "impurity_match_count": 1,
+        "top_impurity_identifier": "acetone",
+        "required_summary_fragment": "Mixture-aware score"
+      }
+    },
+    {
+      "case_id": "local_corpus_metformin_hilic_seeded",
+      "query": {
+        "target_smiles": "CN(C)C(=N)N=C(N)N",
+        "matrix_hint": "human plasma",
+        "preferred_mode": "hilic",
+        "require_mass_spectrometry": true,
+        "apply_contextual_priors": true,
+        "limit": 3
+      },
+      "expected": {
+        "top_record_id": "seed-metformin-hilic-zic",
+        "top_matched_entity": "metformin",
+        "top_score": 0.978,
+        "match_type": "exact",
+        "review_state": "seeded",
+        "corpus_origin": "seeded",
+        "mode": "hilic",
+        "required_summary_fragment": "Context priors: matrix-compatible evidence, detector-compatible evidence, method-family compatibility",
+        "required_snippet_fragment": "Metformin was eluted under near-isocratic conditions"
+      }
+    }
+  ]
+}

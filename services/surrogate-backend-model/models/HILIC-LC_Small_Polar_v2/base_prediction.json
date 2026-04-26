@@ -1,0 +1,25 @@
+{
+  "model_id": "HILIC-LC_Small_Polar_v2",
+  "analytes": [
+    {
+      "id": "metformin",
+      "label": "1",
+      "compoundName": "Metformin",
+      "smiles": "CN(C)C(=N)N=C(N)N",
+      "targetRetentionTimeMin": 0.73,
+      "areaPct": 52,
+      "widthAtMaxFlowMin": 0.04,
+      "widthAtMinFlowMin": 0.14
+    },
+    {
+      "id": "afatinib",
+      "label": "2",
+      "compoundName": "Rosuvastatin",
+      "smiles": "CN(C)C=CC(=O)Nc1cc(OC)c(Nc2ncnc3cc(OCCCN4CCOCC4)c(Cl)cc23)ccc1F",
+      "targetRetentionTimeMin": 1.94,
+      "areaPct": 48,
+      "widthAtMaxFlowMin": 0.05,
+      "widthAtMinFlowMin": 0.18
+    }
+  ]
+}

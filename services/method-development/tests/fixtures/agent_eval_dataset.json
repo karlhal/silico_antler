@@ -1,0 +1,346 @@
+{
+  "cases": [
+    {
+      "case_id": "recommendation.local_files_happy_path",
+      "suite": "smoke",
+      "behavior": "Extracts method from a provided local file and applies scaling.",
+      "runner": "recommendation",
+      "request": {
+        "request_text": "Extract the final LC-MS/MS method for carotenoids in plasma",
+        "analyte_name": "carotenoids",
+        "matrix_hint": "human plasma",
+        "require_mass_spectrometry": true,
+        "source_mode": "local_files",
+        "local_paths": ["tests/paper_example/Development of an Advanced HPLC–MS_MS Method for the Determination of Carotenoids and Fat-Soluble Vitamins in Human Plasma.html"],
+        "system_specs": {
+          "column_manufacturer": "Waters",
+          "column_name": "XBridge BEH C18",
+          "column_chemistry": "C18",
+          "column_length_mm": 100.0,
+          "column_inner_diameter_mm": 2.1,
+          "particle_size_um": 3.5,
+          "available_solvents": ["Water", "Methanol"],
+          "detector_types": ["MS/MS"]
+        }
+      },
+      "expected_outcome": {
+        "status": "completed",
+        "recommended_paper_id": "Development-of-an-Advanced-HPLC-MS_MS-Method-for-the-Determination-of-Carotenoids-and-Fat-Soluble-Vitamins-in-Human-Plasma"
+      },
+      "expected_trace": {
+        "runtime.status": "completed",
+        "recommended_candidate.trust.trust_state": "local_file_extracted"
+      }
+    },
+    {
+      "case_id": "recommendation.open_access_happy_path",
+      "suite": "smoke",
+      "behavior": "Searches for and extracts method from open access source.",
+      "runner": "recommendation",
+      "request": {
+        "request_text": "Find a final LC-MS/MS method for carotenoids in plasma",
+        "analyte_name": "carotenoids",
+        "matrix_hint": "human plasma",
+        "require_mass_spectrometry": true,
+        "source_mode": "open_access",
+        "system_specs": {
+          "column_manufacturer": "Waters",
+          "column_name": "XBridge BEH C18",
+          "column_chemistry": "C18",
+          "column_length_mm": 100.0,
+          "column_inner_diameter_mm": 2.1,
+          "particle_size_um": 3.5,
+          "available_solvents": ["Water", "Methanol"],
+          "detector_types": ["MS/MS"]
+        }
+      },
+      "expected_outcome": {
+        "status": "completed",
+        "recommended_paper_id": "paper-mdpi"
+      },
+      "expected_trace": {
+        "runtime.status": "completed",
+        "recommended_candidate.trust.trust_state": "open_access_extracted"
+      }
+    },
+    {
+      "case_id": "recommendation.local_files_glucose_pmp_rplc",
+      "suite": "core",
+      "behavior": "Extracts the deterministic PLOS glucose PMP RP-HPLC demo method from a bundled local fixture.",
+      "runner": "recommendation",
+      "request": {
+        "request_text": "Extract the final RP-HPLC method for glucose in Shewanella oneidensis cultures utilizing PMP derivatization",
+        "analyte_name": "glucose",
+        "preferred_mode": "rp_lc",
+        "source_mode": "local_files",
+        "local_paths": ["tests/paper_example/paper_test2.pdf"],
+        "max_papers": 1
+      },
+      "expected_outcome": {
+        "status": "completed",
+        "recommended_paper_id": "paper_test2"
+      },
+      "expected_trace": {
+        "runtime.status": "completed",
+        "recommended_candidate.trust.trust_state": "local_file_extracted",
+        "recommended_candidate.trust.validation_status": "needs_review"
+      }
+    },
+    {
+      "case_id": "recommendation.local_corpus_exact_match",
+      "suite": "core",
+      "behavior": "Finds an exact molecular match in the local retrieval store.",
+      "runner": "recommendation",
+      "request": {
+        "request_text": "Find a method for caffeine",
+        "analyte_name": "caffeine",
+        "target_smiles": "CN1C=NC2=C1C(=O)N(C(=O)N2C)C",
+        "source_mode": "local_corpus",
+        "system_specs": {
+          "column_manufacturer": "Waters",
+          "column_name": "Acquity BEH C18",
+          "column_chemistry": "C18",
+          "column_length_mm": 100.0,
+          "column_inner_diameter_mm": 2.1,
+          "particle_size_um": 1.7
+        }
+      },
+      "expected_outcome": {
+        "status": "completed",
+        "recommended_paper_id": "seed-caffeine-rp18"
+      },
+      "expected_trace": {
+        "runtime.status": "completed",
+        "recommended_candidate.trust.trust_state": "seeded_corpus"
+      }
+    },
+    {
+      "case_id": "recommendation.local_corpus_metformin_hilic",
+      "suite": "core",
+      "behavior": "Uses seeded local corpus records to recommend a HILIC LC-MS/MS metformin plasma method without live search.",
+      "runner": "recommendation",
+      "request": {
+        "request_text": "Recommend a HILIC LC-MS/MS method for metformin in human plasma",
+        "analyte_name": "metformin",
+        "target_smiles": "CN(C)C(=N)N=C(N)N",
+        "matrix_hint": "human plasma",
+        "preferred_mode": "hilic",
+        "require_mass_spectrometry": true,
+        "source_mode": "local_corpus",
+        "max_run_time_min": 10,
+        "system_specs": {
+          "column_manufacturer": "Waters",
+          "column_name": "Acquity BEH Amide",
+          "column_chemistry": "amide",
+          "column_length_mm": 150.0,
+          "column_inner_diameter_mm": 2.1,
+          "particle_size_um": 1.7,
+          "available_solvents": ["Water", "Acetonitrile"],
+          "detector_types": ["MS/MS"]
+        }
+      },
+      "expected_outcome": {
+        "status": "completed",
+        "recommended_paper_id": "seed-metformin-hilic-beh-amide"
+      },
+      "expected_trace": {
+        "runtime.status": "completed",
+        "recommended_candidate.trust.trust_state": "seeded_corpus",
+        "recommended_candidate.trust.validation_status": "valid",
+        "recommended_candidate.review_summary.corpus_origin": "seeded"
+      }
+    },
+    {
+      "case_id": "orchestration.review_record_reuse",
+      "suite": "smoke",
+      "behavior": "Reuses existing review record when retry_existing is True.",
+      "runner": "orchestration",
+      "request": {
+        "source_document": {
+          "source_document_id": "eval-orch-001",
+          "source_type": "html",
+          "url": "https://example.test/eval-orch-001"
+        },
+        "html_content": "<html><head><title>HPLC Example</title></head><body><article><section><h2>Methods</h2><p>The selected method used a YMC-Pack ODS-AQ (150 x 4.6 mm, 3 um) column.</p><p>Eluent A: water. Eluent B: acetonitrile.</p><p>The flow rate was 1.0 mL/min.</p><p>The selected method run time was 12 min.</p><p>The selected gradient was 10 to 90% B over 10 min.</p></section><section><h2>Results</h2><p>Under the selected method, intermediate 2 had a retention time of 7.4 min.</p></section></article></body></html>",
+        "retry_existing": true
+      },
+      "expected_outcome": {
+        "registration_status": "reused",
+        "extraction_status": "reused"
+      },
+      "expected_trace": {
+        "steps.registration.status": "reused",
+        "steps.extraction.status": "reused",
+        "budget.total_steps_attempted": 3
+      }
+    },
+    {
+      "case_id": "orchestration.approve_and_promote",
+      "suite": "core",
+      "behavior": "Approves a review record when all requirements are met.",
+      "runner": "orchestration",
+      "request": {
+        "source_document": {
+          "source_document_id": "eval-orch-002",
+          "source_type": "html",
+          "url": "https://example.test/eval-orch-002"
+        },
+        "html_content": "<html><head><title>HPLC Example</title></head><body><article><section><h2>Methods</h2><p>The selected method used a YMC-Pack ODS-AQ (150 x 4.6 mm, 3 um) column.</p><p>Eluent A: water. Eluent B: acetonitrile.</p><p>The flow rate was 1.0 mL/min.</p><p>The selected method run time was 12 min.</p><p>The selected gradient was 10 to 90% B over 10 min.</p></section><section><h2>Results</h2><p>Under the selected method, intermediate 2 had a retention time of 7.4 min.</p></section></article></body></html>",
+        "approve_if_ready": true,
+        "entity_resolutions": [
+          {
+            "local_identifier": "intermediate 2",
+            "smiles_string": "c1ccccc1",
+            "display_name": "Intermediate 2"
+          }
+        ]
+      },
+      "expected_outcome": {
+        "approval_status": "approved",
+        "record_status": "approved"
+      },
+      "expected_trace": {
+        "steps.approval.status": "approved",
+        "steps.approval.state": "completed"
+      }
+    },
+    {
+      "case_id": "orchestration.budget_cutoff",
+      "suite": "core",
+      "behavior": "Stops orchestration when max_total_steps is reached.",
+      "runner": "orchestration",
+      "request": {
+        "source_document": {
+          "source_document_id": "eval-orch-003",
+          "source_type": "html",
+          "url": "https://example.test/eval-orch-003"
+        },
+        "html_content": "<html><head><title>HPLC Example</title></head><body><article><section><h2>Methods</h2><p>The selected method used a YMC-Pack ODS-AQ (150 x 4.6 mm, 3 um) column.</p><p>Eluent A: water. Eluent B: acetonitrile.</p><p>The flow rate was 1.0 mL/min.</p><p>The selected method run time was 12 min.</p><p>The selected gradient was 10 to 90% B over 10 min.</p></section><section><h2>Results</h2><p>Under the selected method, intermediate 2 had a retention time of 7.4 min.</p></section></article></body></html>",
+        "approve_if_ready": true,
+        "max_total_steps": 3
+      },
+      "expected_outcome": {
+        "cutoff_reached": true
+      },
+      "expected_trace": {
+        "budget.cutoff_reached": true,
+        "steps.approval.state": "cutoff"
+      }
+    },
+    {
+      "case_id": "orchestration.ai_observer_summary",
+      "suite": "core",
+      "behavior": "Generates AI observer summary when enabled.",
+      "runner": "orchestration",
+      "request": {
+        "source_document": {
+          "source_document_id": "eval-orch-004",
+          "source_type": "html",
+          "url": "https://example.test/eval-orch-004"
+        },
+        "html_content": "<html><head><title>HPLC Example</title></head><body><article><section><h2>Methods</h2><p>The selected method used a YMC-Pack ODS-AQ (150 x 4.6 mm, 3 um) column.</p><p>Eluent A: water. Eluent B: acetonitrile.</p><p>The flow rate was 1.0 mL/min.</p><p>The selected method run time was 12 min.</p><p>The selected gradient was 10 to 90% B over 10 min.</p></section><section><h2>Results</h2><p>Under the selected method, intermediate 2 had a retention time of 7.4 min.</p></section></article></body></html>",
+        "approve_if_ready": true,
+        "enable_ai_observer": true,
+        "max_total_steps": 5
+      },
+      "expected_outcome": {
+        "ai_observer_status": "completed"
+      },
+      "expected_trace": {
+        "steps.ai_observer.status": "completed",
+        "steps.ai_observer.state": "completed"
+      }
+    },
+    {
+      "case_id": "recommendation.open_access_screening_skip",
+      "suite": "core",
+      "behavior": "Skips a paper during open access screening due to irrelevance.",
+      "runner": "recommendation",
+      "request": {
+        "request_text": "Find a method for carotenoids",
+        "analyte_name": "carotenoids",
+        "source_mode": "open_access",
+        "max_papers": 1
+      },
+      "expected_outcome": {
+        "status": "completed"
+      },
+      "expected_trace": {
+        "runtime.status": "completed",
+        "discovery_summary.skipped_paper_count": 1
+      }
+    },
+    {
+      "case_id": "recommendation.open_access_fetch_degraded",
+      "suite": "core",
+      "behavior": "Handles fetch failure gracefully and reports degraded status.",
+      "runner": "recommendation",
+      "request": {
+        "request_text": "Find a method for carotenoids",
+        "analyte_name": "carotenoids",
+        "source_mode": "open_access",
+        "max_papers": 2
+      },
+      "expected_outcome": {
+        "status": "completed_with_degraded_source"
+      },
+      "expected_trace": {
+        "runtime.status": "completed_with_degraded_source",
+        "runtime.degraded": true
+      }
+    },
+    {
+      "case_id": "recommendation.no_trustworthy_candidates",
+      "suite": "core",
+      "behavior": "Reports no trustworthy candidates when extraction fails validation.",
+      "runner": "recommendation",
+      "request": {
+        "request_text": "Find a method that will fail validation",
+        "analyte_name": "invalid",
+        "source_mode": "open_access"
+      },
+      "expected_outcome": {
+        "status": "no_trustworthy_candidates"
+      },
+      "expected_trace": {
+        "runtime.status": "no_trustworthy_candidates"
+      }
+    },
+    {
+      "case_id": "recommendation.local_corpus_impurity_ranking",
+      "suite": "core",
+      "behavior": "Ranks candidates correctly based on impurity matches in local corpus.",
+      "runner": "recommendation",
+      "request": {
+        "request_text": "Find a method for ethanol and acetone",
+        "analyte_name": "ethanol",
+        "target_smiles": "CCO",
+        "impurity_smiles": ["CC(=O)C"],
+        "source_mode": "local_corpus"
+      },
+      "expected_outcome": {
+        "recommended_paper_id": "record-multi-analyte"
+      },
+      "expected_trace": {
+        "recommended_candidate.ranking_context.ranking_mode": "target_plus_impurities",
+        "recommended_candidate.ranking_context.impurity_count": 1
+      }
+    },
+    {
+      "case_id": "recommendation.request_invalid",
+      "suite": "core",
+      "behavior": "Rejects invalid requests with 422 error.",
+      "runner": "recommendation",
+      "request": {
+        "request_text": "",
+        "source_mode": "local_files"
+      },
+      "expected_outcome": {
+        "status": "request_invalid"
+      },
+      "expected_trace": {
+        "runtime_status": "request_invalid"
+      }
+    }
+  ]
+}

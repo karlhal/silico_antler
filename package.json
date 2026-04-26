@@ -1,0 +1,13 @@
+{
+  "name": "silico-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/agent",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:agent": "npm run dev --workspace silico-agent",
+    "build:agent": "npm run build --workspace silico-agent",
+    "agent:harness:check": "python3 scripts/agent_harness/validate.py"
+  }
+}

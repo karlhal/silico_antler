@@ -1,0 +1,48 @@
+apps/sidecar/legacy_runtime/builtin_ensemble_a40/
+
+# OS / editor
+.DS_Store
+
+# Node / frontend
+node_modules/
+.vite/
+dist/
+coverage/
+
+# Python
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.pyc
+.venv/
+
+# Rust / Tauri
+target/
+apps/desktop/src-tauri/target/
+
+# Env / local
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Runtime data / logs
+*.log
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+
+# Temporary workspace artifacts
+tmp/
+.playwright-cli/
+output/playwright/
+output/agent-harness/
+
+# Tauri Sidecar binaries and bundles
+apps/desktop/src-tauri/binaries/**
+!apps/desktop/src-tauri/binaries/.gitkeep
+apps/desktop/src-tauri/sidecar-bundles/**

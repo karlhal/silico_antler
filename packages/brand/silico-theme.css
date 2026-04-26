@@ -1,0 +1,91 @@
+:root {
+  color-scheme: light;
+
+  /* The Digital Curator v2.0 - Editorial Premium Palette */
+  /* Base & Neutrals (Warm Whites / Parchment) */
+  --silico-bg-base: oklch(97.5% 0.01 60);         /* Warm Parchment */
+  --silico-bg-surface: oklch(95% 0.015 60);      /* Editorial Surface */
+  --silico-bg-surface-soft: oklch(92% 0.02 60);   /* Muted Section */
+
+  /* Typography & Ink (Almost Blacks) */
+  --silico-text-primary: oklch(18% 0.015 250);    /* Deep Blue-tinted Ink */
+  --silico-text-secondary: oklch(45% 0.015 250);  /* Lead Gray Labels */
+  --silico-line-subtle: oklch(85% 0.01 60);       /* Structural Border */
+  --silico-line-strong: oklch(75% 0.015 60);      /* High-contrast Border */
+
+  /* Accents (Interaction Blue & Cobalt) */
+  --silico-accent-blue: oklch(55% 0.22 250);      /* Shifted to purer blue */
+  --silico-accent-cobalt: oklch(42% 0.18 250);    /* Shifted to purer cobalt */
+  --silico-accent-cobalt-soft: oklch(65% 0.12 250);
+  --silico-accent-teal: oklch(60% 0.12 170);
+  --silico-accent-rose: oklch(60% 0.15 20);
+  --silico-accent-gold: oklch(70% 0.1 80);
+
+  /* Typography Scale */
+  --silico-font-primary: 'Libre Caslon Text', Georgia, serif;
+  --silico-font-primary-strong: 'Libre Caslon Text', Georgia, serif;
+  --silico-font-body: 'Manrope', system-ui, sans-serif;
+  --silico-font-subhead: var(--silico-font-body);
+  --silico-font-kicker: var(--silico-font-body);
+
+  /* Geometry & Structure */
+  --silico-radius-sm: 2px;
+  --silico-radius-md: 6px;
+  --silico-radius-lg: 12px;  /* Sharp, editorial content islands */
+
+  /* Shadowless Depth System */
+  --silico-shadow-soft: none;
+  --silico-shadow-soft-hover: none;
+  --silico-shadow-medium: none;
+  --silico-halo: 0 0 0 1px var(--silico-line-subtle);
+
+  /* Compatibility aliases */
+  --silico-accent-1: var(--silico-accent-blue);
+  --silico-accent-2: var(--silico-accent-cobalt-soft);
+  --silico-accent-3: var(--silico-accent-teal);
+  --silico-accent-4: var(--silico-accent-rose);
+  --silico-accent-5: var(--silico-accent-gold);
+  --silico-accent-6: var(--silico-line-subtle);
+  --silico-light-1: var(--silico-bg-base);
+  --silico-light-2: var(--silico-bg-surface);
+  --silico-light-3: var(--silico-bg-surface-soft);
+  --silico-dark-1: var(--silico-text-primary);
+  --silico-dark-2: var(--silico-text-secondary);
+
+  --silico-surface: var(--silico-bg-surface);
+  --silico-surface-soft: var(--silico-bg-surface-soft);
+  --silico-surface-quiet: oklch(96.5% 0.01 60);
+  --silico-border: var(--silico-line-subtle);
+  --silico-border-strong: var(--silico-line-strong);
+  --silico-cobalt: var(--silico-accent-cobalt);
+  --silico-cobalt-soft: var(--silico-accent-cobalt-soft);
+  --silico-teal: var(--silico-accent-teal);
+  --silico-gold: var(--silico-accent-gold);
+  --silico-rose: var(--silico-accent-rose);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--silico-bg-base);
+  color: var(--silico-text-primary);
+  font-family: var(--silico-font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: var(--silico-text-primary);
+  font-family: var(--silico-font-primary);
+  font-weight: 400; /* Editorial authority with Libre Caslon */
+  letter-spacing: -0.01em;
+}
+
+p { margin: 0; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+strong { font-weight: 500; }

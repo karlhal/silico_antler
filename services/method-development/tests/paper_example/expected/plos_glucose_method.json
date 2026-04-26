@@ -1,0 +1,90 @@
+{
+  "paper_id": "plos_glucose_method",
+  "title": "Development of a RP-HPLC method for determination of glucose in Shewanella oneidensis cultures utilizing 1-phenyl-3-methyl-5-pyrazolone derivatization",
+  "source_files": {
+    "pdf": "paper_test2.pdf",
+    "html": "Development of a RP-HPLC method for determination of glucose in Shewanella oneidensis cultures utilizing 1-phenyl-3-methyl-5-pyrazolone derivatization _ PLOS One.html"
+  },
+  "source_overrides": {
+    "pdf": {
+      "expected": {
+        "method_parameters": {
+          "gradient_program": []
+        },
+        "retention_entities": []
+      }
+    },
+    "html": {
+      "expected": {
+        "method_parameters": {},
+        "retention_entities": []
+      }
+    }
+  },
+  "expected": {
+    "chromatography_system": {
+      "mode": "rp_lc",
+      "column_name": "YMC-Pack ODS-AQ",
+      "column_length_mm": 150.0,
+      "column_inner_diameter_mm": 4.6,
+      "particle_size_um": 3.0,
+      "guard_column": "YMC guard column 3 um 4.0 mm ID",
+      "detector": "DAD"
+    },
+    "method_parameters": {
+      "mobile_phase_a": "15 mM potassium phosphate dibasic buffer pH 7.2",
+      "mobile_phase_b": "acetonitrile",
+      "gradient_basis": "percent_a_and_b",
+      "gradient_program": [
+        {
+          "time_min": 0.0,
+          "a_pct": 90.0,
+          "b_pct": 10.0
+        },
+        {
+          "time_min": 9.0,
+          "a_pct": 86.0,
+          "b_pct": 14.0
+        },
+        {
+          "time_min": 30.0,
+          "a_pct": 36.0,
+          "b_pct": 64.0
+        },
+        {
+          "time_min": 35.0,
+          "a_pct": 36.0,
+          "b_pct": 64.0
+        }
+      ],
+      "flow_rate_ml_min": 1.0,
+      "injection_volume_ul": 5.0,
+      "column_temperature_c": 29.5,
+      "run_time_min": 35.0,
+      "equilibration_time_min": 10.0,
+      "wavelength_nm": 245.0,
+      "sample_prep_notes": [
+        "PMP derivatization at 70 C for 90 min",
+        "Reaction pH 13",
+        "Neutralize with 0.5 M HCl at 4 C",
+        "Dichloromethane extraction repeated three times"
+      ]
+    },
+    "retention_entities": [
+      {
+        "name": "PMP-glucose",
+        "retention_time_min": 16.7,
+        "notes": "Final peak of interest in selected method"
+      }
+    ]
+  },
+  "ambiguities_and_pitfalls": [
+    "The paper title says glucose but the chromatographic analyte is derivatized PMP-glucose.",
+    "The paper mixes final analytical method, derivatization procedure, and biological application details.",
+    "The return-to-initial composition is implied by equilibration and not explicitly listed in the gradient table."
+  ],
+  "must_not_extract": [
+    "Do not treat optimization trial conditions as the final method.",
+    "Do not treat microbial growth conditions as chromatographic method parameters."
+  ]
+}

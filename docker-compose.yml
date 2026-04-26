@@ -1,0 +1,40 @@
+services:
+  api:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    environment:
+      ENABLE_API_DOCS: ${ENABLE_API_DOCS:-false}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:5173}
+      ALLOWED_CORS_METHODS: ${ALLOWED_CORS_METHODS:-GET,POST,OPTIONS}
+      ALLOWED_CORS_HEADERS: ${ALLOWED_CORS_HEADERS:-Accept,Content-Type,Origin}
+      TRUSTED_HOSTS: ${TRUSTED_HOSTS:-localhost,127.0.0.1}
+    expose:
+      - "8000"
+
+  agent:
+    build:
+      context: ./apps/agent
+      dockerfile: Dockerfile
+    expose:
+      - "80"
+
+  method-dev:
+    build:
+      context: ./services/method-development
+      dockerfile: Dockerfile
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    expose:
+      - "8001"
+
+  proxy:
+    build:
+      context: ./infra/proxy
+      dockerfile: Dockerfile
+    depends_on:
+      - api
+      - agent
+      - method-dev
+    ports:
+      - "${APP_PORT:-8080}:80"

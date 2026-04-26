@@ -1,0 +1,44 @@
+{
+  "positive": [
+    {
+      "id": "extract-final-mdpi-method",
+      "prompt": "Extract the final LC-MS/MS method for carotenoids and fat-soluble vitamins in human plasma, including column, mobile phases, gradient, flow rate, runtime, and key retention times.",
+      "expected_papers": [
+        "mdpi_carotenoid_method"
+      ],
+      "expected_outcome": "should_extract"
+    },
+    {
+      "id": "extract-final-plos-method",
+      "prompt": "Extract the final RP-HPLC method for PMP-glucose, including the selected column, mobile phases, flow rate, temperature, runtime, and retention time.",
+      "expected_papers": [
+        "plos_glucose_method"
+      ],
+      "expected_outcome": "should_extract"
+    },
+    {
+      "id": "extract-plos-final-over-optimization",
+      "prompt": "Find the selected final glucose HPLC method for Shewanella media and ignore optimization-only trial conditions.",
+      "expected_papers": [
+        "plos_glucose_method"
+      ],
+      "expected_outcome": "should_extract"
+    },
+    {
+      "id": "demo-glucose-pmp-rplc-fixture",
+      "prompt": "Extract the final RP-HPLC method for glucose in Shewanella oneidensis cultures utilizing PMP derivatization.",
+      "expected_papers": [
+        "plos_glucose_method"
+      ],
+      "expected_outcome": "should_extract"
+    }
+  ],
+  "negative": [
+    {
+      "id": "no-gc-method-in-example-set",
+      "prompt": "Find a GC-MS method for cannabinoid analysis in these example papers.",
+      "expected_papers": [],
+      "expected_outcome": "should_not_find"
+    }
+  ]
+}

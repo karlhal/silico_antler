@@ -1,0 +1,165 @@
+{
+  "paper_id": "mdpi_carotenoid_method",
+  "title": "Development of an Advanced HPLC-MS/MS Method for the Determination of Carotenoids and Fat-Soluble Vitamins in Human Plasma",
+  "source_files": {
+    "pdf": "ijms-17-01719.pdf",
+    "html": "Development of an Advanced HPLC-MS_MS Method for the Determination of Carotenoids and Fat-Soluble Vitamins in Human Plasma.html"
+  },
+  "expected": {
+    "chromatography_system": {
+      "mode": "rp_lc",
+      "column_name": "YMC Carotenoid S-5 um",
+      "column_length_mm": 250.0,
+      "column_inner_diameter_mm": 4.6,
+      "particle_size_um": 5.0,
+      "detector": "MS/MS",
+      "ionization": "APCI positive",
+      "acquisition_mode": "MRM"
+    },
+    "method_parameters": {
+      "mobile_phase_a": "MeOH with 0.7 g/L ammonium acetate and 0.1% acetic acid",
+      "mobile_phase_b": "MTBE/MeOH 80:20 with 0.7 g/L ammonium acetate and 0.1% acetic acid",
+      "gradient_basis": "percent_a",
+      "gradient_program": [
+        {
+          "time_min": 0.0,
+          "a_pct": 90.0,
+          "b_pct": 10.0
+        },
+        {
+          "time_min": 10.0,
+          "a_pct": 75.0,
+          "b_pct": 25.0
+        },
+        {
+          "time_min": 20.0,
+          "a_pct": 50.0,
+          "b_pct": 50.0
+        },
+        {
+          "time_min": 25.0,
+          "a_pct": 30.0,
+          "b_pct": 70.0
+        },
+        {
+          "time_min": 35.0,
+          "a_pct": 10.0,
+          "b_pct": 90.0
+        },
+        {
+          "time_min": 37.0,
+          "a_pct": 6.0,
+          "b_pct": 94.0
+        },
+        {
+          "time_min": 39.0,
+          "a_pct": 90.0,
+          "b_pct": 10.0
+        },
+        {
+          "time_min": 50.0,
+          "a_pct": 90.0,
+          "b_pct": 10.0
+        }
+      ],
+      "flow_rate_ml_min": 0.6,
+      "injection_volume_ul": 20.0,
+      "column_temperature_c": 40.0,
+      "run_time_min": 50.0,
+      "sample_reconstitution": "MeOH",
+      "selected_additive_condition": "0.7 g/L ammonium acetate and 0.1% acetic acid in both mobile phases"
+    },
+    "retention_entities": [
+      {
+        "name": "retinol",
+        "retention_time_min": 5.0,
+        "transition": "269 -> 181"
+      },
+      {
+        "name": "25-hydroxycholecalciferol",
+        "retention_time_min": 6.45,
+        "transition": "383 -> 365"
+      },
+      {
+        "name": "retinol acetate",
+        "retention_time_min": 7.34,
+        "transition": "329 -> 269"
+      },
+      {
+        "name": "alpha-tocotrienol",
+        "retention_time_min": 9.03,
+        "transition": "411 -> 165"
+      },
+      {
+        "name": "cholecalciferol",
+        "retention_time_min": 10.45,
+        "transition": "385 -> 367"
+      },
+      {
+        "name": "astaxanthin",
+        "retention_time_min": 11.69,
+        "transition": "597 -> 147"
+      },
+      {
+        "name": "lutein",
+        "retention_time_min": 12.98,
+        "transition": "551 -> 429"
+      },
+      {
+        "name": "zeaxanthin",
+        "retention_time_min": 14.4,
+        "transition": "568 -> 476"
+      },
+      {
+        "name": "cantaxanthin",
+        "retention_time_min": 16.47,
+        "transition": "565 -> 363"
+      },
+      {
+        "name": "E-beta-apo-8'-carotenal",
+        "retention_time_min": 17.16,
+        "transition": "417 -> 325"
+      },
+      {
+        "name": "cryptoxanthin",
+        "retention_time_min": 20.71,
+        "transition": "553 -> 535"
+      },
+      {
+        "name": "13-Z-beta-carotene",
+        "retention_time_min": 25.03,
+        "transition": "536 -> 444"
+      },
+      {
+        "name": "alpha-carotene",
+        "retention_time_min": 25.85,
+        "transition": "536 -> 444"
+      },
+      {
+        "name": "beta-carotene",
+        "retention_time_min": 27.42,
+        "transition": "537 -> 413"
+      },
+      {
+        "name": "9-Z-beta-carotene",
+        "retention_time_min": 28.13,
+        "transition": "537 -> 413"
+      },
+      {
+        "name": "5-Z-lycopene",
+        "retention_time_min": 37.65,
+        "transition": "537 -> 413"
+      }
+    ]
+  },
+  "ambiguities_and_pitfalls": [
+    "The paper mixes exploratory additive comparisons and earlier longer runs with the final selected method.",
+    "HPLC and UHPLC wording is inconsistent across the paper.",
+    "Several analytes share transitions and must be separated by retention time.",
+    "Sample preparation and validation tables are extensive and should not replace the final chromatographic method fields."
+  ],
+  "must_not_extract": [
+    "Do not keep older exploratory solvent/additive combinations as the final method.",
+    "Do not collapse the 16-analyte retention table into a single retention observation."
+  ]
+}
