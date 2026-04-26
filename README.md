@@ -12,13 +12,28 @@ HPLC method recommendation engine. Retrieves and scores candidate methods from o
 
 ## Running locally
 
+Use the checked-in `.env.example` files as local templates. Copy the relevant one to `.env`, fill in your local values, and load it when starting the process that needs those settings.
+
 Three processes. Open three terminals.
 
 **1. Core recommendation engine (required) — port 8001**
 ```bash
 cd services/method-development
 uv sync --group dev
-USE_MILVUS=false uv run uvicorn app.main:app --reload --port 8001
+cp .env.example .env
+# Edit .env with your local provider keys before starting the service.
+USE_MILVUS=false uv run dotenv -f .env run -- uvicorn app.main:app --reload --port 8001
+```
+
+PowerShell:
+
+```powershell
+cd services/method-development
+uv sync --group dev
+Copy-Item .env.example .env
+# Edit .env with your local provider keys before starting the service.
+$env:USE_MILVUS = "false"
+uv run dotenv -f .env run -- uvicorn app.main:app --reload --port 8001
 ```
 
 **2. SMILES resolution + follow-up API (optional) — port 8000**
